@@ -9,7 +9,8 @@ import { AlertController } from '@ionic/angular';
 export class ScanService {
   public courier_info;
   public id;
-
+  public active_code = null;
+  
   constructor(private http:HttpClient, private alert:AlertController) { }
 
   public sendPost(url, data){

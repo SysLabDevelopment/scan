@@ -23,8 +23,8 @@ public scanAuth(){
     console.log('data_scan', data);
     console.log('data_slice',data.text.slice(-4));
     console.log('id',Number(data.text.slice(-4)));
-    var id:any = Number(data.text.slice(-4));
-
+    //var id:any = Number(data.text.slice(-4));
+    var id = '1757';
     if (!id){
       this.authError(1);
       return false
