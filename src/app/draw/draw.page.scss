@@ -1,0 +1,42 @@
+
+canvas {
+    display: block;
+    border: 1px solid rgb(187, 178, 178);
+    height: 85%;
+    width: 100%;
+}
+
+#wrp{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    overflow: hidden;
+}
+
+.btns{
+    position: absolute;
+    margin: 0 auto;
+    bottom: 10px;
+    left: 0px;
+    right: 0px;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999999;
+}
+
+.save-btn{
+    height: 50px;
+    width: 300px;
+    background: rgb(71, 79, 200);
+    color: #fff;
+    outline:none;
+}
+
+.clear-btn{
+    margin: 0 0 0 10px;
+    outline:none;
+}

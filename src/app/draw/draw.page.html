@@ -1,0 +1,11 @@
+<ion-content>
+  <div id="wrp" >
+ 
+    <canvas #myCanvas (touchstart)="handleStart($event)" (touchmove)="handleMove($event)"></canvas>
+    <div class="btns">
+      <button class="save-btn" (click)="saveImage()">Отправить автограф</button>
+      <button class="save-btn clear-btn" (click)="clearCanvas()">Очистить</button>
+    </div>
+    
+  </div>
+</ion-content>

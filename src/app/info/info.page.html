@@ -1,0 +1,37 @@
+<ion-content>
+<div class="main-info">
+  <div class="wrp">
+      <div class="mi-title">Информация о выдаче</div>
+      <div class="mi-body">
+        <div class="mi-table">
+          <table>
+            <tr>
+              <th>Дата начисления</th>
+              <th>Дата выдачи</th>
+              <th>Бонус</th>
+              <th>Штраф</th>
+              <th>Аванс</th>
+              <th>К выплате</th>
+              <th>Тип платежа</th>
+              <th>Сообщение</th>
+            </tr>
+            <tr>
+              <td>{{info.DateCash}}</td>
+              <td>{{info.date_put}}</td>
+              <td>{{info.bonus}}</td>
+              <td>{{info.shtraf}}</td>
+              <td>{{info.prepay}}</td>
+              <td>{{info.profit}}</td>
+              <td>{{info.PayType}}</td>
+              <td>{{info.message}}</td>
+            </tr>
+          </table>
+        </div>
+        <div class="mi-btn">
+          <button class="to_scan" (click)="toDraw()">Расписаться</button>
+        </div>
+      </div>
+  </div>
+
+</div>
+</ion-content>

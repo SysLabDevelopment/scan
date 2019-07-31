@@ -1,1 +1,23 @@
+.lg-login{
+    outline: none;
+    height: 12%;
+    width: 80%;
+    background: no-repeat;
+    box-shadow: 0 0 1px 1px #bdbdbd;
+    border-radius: 3px;
+    color: #4a4a4a;
+    font-size: 19px;
+    margin: 10px 0;
+}
 
+#wrp{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    padding: 20px;
+    justify-content: center;
+    align-items: center;
+}
