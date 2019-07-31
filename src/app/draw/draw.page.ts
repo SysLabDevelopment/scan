@@ -74,13 +74,13 @@ public saveImage(){
    //const data = new HttpParams().set('cId', id).set('sum', '100500' ).set('base64', code);
    const options = {};
   //var data = {'cId': id, 'sum' : '100500' , 'base64' : code} ;
-  let courier_info
+  let courier_info;
   for (let i = 0; i< this.scan.courier_info.length; i++){
     if (this.scan.courier_info[i].code == this.scan.active_code ){
       courier_info = this.scan.courier_info[i];
     }
   }
-  var data = 'sum='+ courier_info + '&cId='+ id + '&base64=' + code + '&code=' + this.scan.active_code;
+  var data = 'sum='+ courier_info.profit + '&cId='+ id + '&base64=' + code + '&code=' + this.scan.active_code;
   var self = this;
   var url = "https://mok.flexcore.ru/order/someFoto/";
 
