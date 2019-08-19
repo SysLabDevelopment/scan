@@ -1,40 +1,40 @@
 <ion-content>
 <div class="main-info">
   <div class="wrp">
-      <div class="mi-title">Выберите выдачу</div>
+    <div class="mi-title">Выберите выдачу</div>
+    <div class="mi-name">{{scan.name}}</div>
       <div class="mi-body">
+        <div class="mi-table">
+          <div class="m-row m-row-h">
+            <div class="m-col-h m-col">Код</div>
+            <div class="m-col-h m-col">Дата начисления</div>
+            <div class="m-col-h m-col">Дата выдачи</div>
+            <div class="m-col-h m-col">Начислено</div>
+            <div class="m-col-h m-col">Бонус</div>
+            <div class="m-col-h m-col">Штраф</div>
+            <div class="m-col-h m-col">Аванс</div>
+            <div class="m-col-h m-col">К выплате</div>
+            <div class="m-col-h m-col">Тип платежа</div>
+            <div class="m-col-h m-col">Сообщение</div>
+          </div>
           <cdk-virtual-scroll-viewport  style="height: 400px; width: 100%" itemSize="90" >
-            <ng-container *ngFor="let info of tbls">
-                  <div class="mi-table" (click)="toDraw(info.code)">
-                      <table>
-                        <tr>
-                          <th>Код</th>
-                          <th>Дата начисления</th>
-                          <th>Дата выдачи</th>
-                          <th>Бонус</th>
-                          <th>Штраф</th>
-                          <th>Аванс</th>
-                          <th>К выплате</th>
-                          <th>Тип платежа</th>
-                          <th>Сообщение</th>
-                        </tr>
-                        <tr>
-                          <td>{{info.code}}</td>
-                          <td>{{info.DateCash}}</td>
-                          <td>{{info.date_put}}</td>
-                          <td>{{info.bonus}}</td>
-                          <td>{{info.shtraf}}</td>
-                          <td>{{info.prepay}}</td>
-                          <td>{{info.profit}}</td>
-                          <td>{{info.PayType}}</td>
-                          <td>{{info.message}}</td>
-                        </tr>
-                      </table>
-                    </div>
-            </ng-container>
-          </cdk-virtual-scroll-viewport>  
+              <ng-container *ngFor="let info of scan.tbls; let i = index">
+                  <div class="m-row scroll-row" (click)="toDraw(info.code)" [ngClass]="{'row_gray': i%2 == 0, 'disActive' : scan.scanCodes.indexOf( info.code ) != -1 }">
+                    <div class="m-col">{{info.code}}</div>
+                    <div class="m-col">{{info.DateCash}}</div>
+                    <div class="m-col">{{info.date_put}}</div>
+                    <div class="m-col">{{info.profit}}</div>
+                    <div class="m-col">{{info.bonus}}</div>
+                    <div class="m-col">{{info.shtraf}}</div>
+                    <div class="m-col">{{info.prepay}}</div>
+                    <div class="m-col">{{info.calcedSum}}</div>
+                    <div class="m-col">{{info.PayType}}</div>
+                    <div class="m-col">{{info.message}}</div>
+                  </div>
+              </ng-container>
+            </cdk-virtual-scroll-viewport>  
+        </div>
       </div>
   </div>
-
 </div>
 </ion-content>

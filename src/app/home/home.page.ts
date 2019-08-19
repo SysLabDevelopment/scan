@@ -20,26 +20,31 @@ public scanAuth(){
   var self = this;
 
   this.scanData().then((data) => {
-    console.log('data_scan', data);
-    console.log('data_slice',data.text.slice(-4));
-    console.log('id',Number(data.text.slice(-4)));
-    //var id:any = Number(data.text.slice(-4));
-    var id = '1757';
-    if (!id){
-      this.authError(1);
-      return false
-    }
-    id = String(id);
-    localStorage.setItem('id', id);
-    var self = this;
-    this.scan.courierInfo(id).subscribe((res:any) => {
-      if (res != null){
-        self.scan.courier_info = res;
-        self.scan.id = id;
-        self.successAuth();
-      }
-    });
+    self.set_data(data);
   });
+}
+
+public set_data(data){
+  console.log('data_scan', data);
+  console.log('data_slice',data.text.slice(-4));
+  console.log('id',Number(data.text.slice(-4)));
+  var id:any = Number(data.text.slice(-4)); 
+
+
+ //var id = '1757';
+  if (!id){
+    this.authError(1);
+    return false
+  }
+  id = String(id);
+  localStorage.setItem('id', id);
+  var self = this;
+  this.scan.initInfo(id).subscribe((resp) =>{
+    if (resp){
+      self.successAuth();
+    }
+  });
+
 }
 
 public successAuth(){

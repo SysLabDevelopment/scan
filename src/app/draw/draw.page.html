@@ -1,9 +1,37 @@
 <ion-content>
   <div id="wrp" >
- 
+    <div class="code-info">
+        <div class="mi-table">
+            <div class="m-row m-row-h">
+              <div class="m-col-h m-col">Код</div>
+              <div class="m-col-h m-col">Дата начисления</div>
+              <div class="m-col-h m-col">Дата выдачи</div>
+              <div class="m-col-h m-col">Начислено</div>
+              <div class="m-col-h m-col">Бонус</div>
+              <div class="m-col-h m-col">Штраф</div>
+              <div class="m-col-h m-col">Аванс</div>
+              <div class="m-col-h m-col">К выплате</div>
+              <div class="m-col-h m-col">Тип платежа</div>
+              <div class="m-col-h m-col">Сообщение</div>
+            </div>
+            <div class="m-row scroll-row">
+              <div class="m-col">{{scan.active_row.code}}</div>
+              <div class="m-col">{{scan.active_row.DateCash}}</div>
+              <div class="m-col">{{scan.active_row.date_put}}</div>
+              <div class="m-col">{{scan.active_row.profit}}</div>
+              <div class="m-col">{{scan.active_row.bonus}}</div>
+              <div class="m-col">{{scan.active_row.shtraf}}</div>
+              <div class="m-col">{{scan.active_row.prepay}}</div>
+              <div class="m-col">{{scan.active_row.calcedSum}}</div>
+              <div class="m-col">{{scan.active_row.PayType}}</div>
+              <div class="m-col">{{scan.active_row.message}}</div>
+            </div>
+          </div>
+    </div>
     <canvas #myCanvas (touchstart)="handleStart($event)" (touchmove)="handleMove($event)"></canvas>
+    <div class="error" *ngIf="error_mes">Необходимо оставить подпись</div>
     <div class="btns">
-      <button class="save-btn" (click)="saveImage()">Отправить автограф</button>
+      <button class="save-btn" (click)="saveImage()">Отправить</button>
       <button class="save-btn clear-btn" (click)="clearCanvas()">Очистить</button>
     </div>
     

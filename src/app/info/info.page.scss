@@ -10,7 +10,9 @@
 .mi-body{
     width: 100%;
     height: 100%;
-
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .mi-btn{
@@ -57,4 +59,65 @@ th, td{
 table{
     width: 100%;
     margin: 20px 0px;
+}
+
+tr{
+    width: 100%;
+}
+
+.mi-table{
+    display: grid;
+    grid-template-rows: 40px auto;
+    border: 1px solid #e4e4e4;
+}
+
+.m-row{
+    display: grid;
+    grid-template-columns: 120px 180px 180px 120px 100px 100px 100px 100px 150px 150px;
+    min-height: 40px;
+}
+
+.m-col{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.scroll-row{
+    box-shadow: -2px 0 0.5px 0.5px #e4e4e4
+}
+
+.m-row-h{
+    border-bottom: 1px solid #e4e4e4;
+}
+
+.m-col{
+    border-left: 1px solid #e4e4e4;
+}
+
+.m-col:first-child{
+    border-left: none;
+}
+
+.row_gray{
+    background: #dddddd;
+}
+
+.mi-name{
+    padding: 8px 0;
+    text-transform: uppercase;
+    font-size: 20px;
+}
+
+.disActive{
+    background: #00398e;
+}
+
+.error{
+    width: 100%;
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 25px;
+    color: #d40000;
+    padding: 4px 0;
 }

@@ -15,8 +15,14 @@ export class RootGuard implements CanActivate {
     let id  = localStorage.getItem('id');
 
     console.log('guard_params', url, id);
-    if (url == "draw") {
-      if (!id) return false;
+
+    switch (url) {
+      case 'draw':
+          if (!id) return false;
+        break;
+      case 'home':
+        if (id) return false;
+        break;   
     }
 
     return true;
