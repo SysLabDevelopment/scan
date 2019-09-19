@@ -48,6 +48,15 @@ export class ScanService {
       
           await alert.present();
       break;
+      case 2:
+          const alert2 = await this.alert.create({
+            header: 'Авторизация',
+            message: 'Ошибка авторизации. Поаторите запрос позже!',
+            buttons: ['OK']
+          });
+      
+          await alert2.present();
+      break;
     }
   }
 

@@ -10,6 +10,8 @@ import { ScanService } from '../scan.service';
   styleUrls: ['home.page.scss'],
 })
 export class HomePage {
+  private loader:boolean = false;
+
 constructor( private bScan:BarcodeScanner, private router:Router, private scan:ScanService){}
 
 public scanData(){
@@ -18,7 +20,7 @@ public scanData(){
 
 public scanAuth(){
   var self = this;
-
+  this.loader = true;
   this.scanData().then((data) => {
     self.set_data(data);
   });
@@ -27,13 +29,15 @@ public scanAuth(){
 public set_data(data){
   console.log('data_scan', data);
   console.log('data_slice',data.text.slice(-4));
-  console.log('id',Number(data.text.slice(-4)));
-  var id:any = Number(data.text.slice(-4)); 
+  console.log('id',Number(data.text.split(',')[1]));
+  var id:any = Number(data.text.split(',')[1]); 
 
 
  //var id = '1757';
   if (!id){
     this.authError(1);
+    this.loader = false;
+    self.scan.showMessage(2);
     return false
   }
   id = String(id);
@@ -42,7 +46,10 @@ public set_data(data){
   this.scan.initInfo(id).subscribe((resp) =>{
     if (resp){
       self.successAuth();
+    } else {
+      self.scan.showMessage(2);
     }
+    self.loader = false;
   });
 
 }

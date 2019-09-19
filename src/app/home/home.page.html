@@ -2,4 +2,7 @@
   <div id="wrp" >
     <button class="lg-login"(click)="scanAuth()">Войти по QR-коду</button>
   </div>
+  <div class="shirm" *ngIf="loader">
+    <i class="fas fa-spinner fa-spin"></i>
+</div>
 </ion-content>

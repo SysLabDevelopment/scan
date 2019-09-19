@@ -11,13 +11,28 @@
 }
 
 #wrp{
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    display: flex;
+height: 100%;
     padding: 20px;
     justify-content: center;
     align-items: center;
+}
+
+.shirm{
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    bottom: 0px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: RGBA(0,0,0,0.1);
+    z-index: 999999;
+}
+
+.shirm i{
+    position: relative;
+    margin: auto;
+    font-size: 43px;
+    color: #2b637e;
 }
